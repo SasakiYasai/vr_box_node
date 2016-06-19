@@ -10,6 +10,18 @@ var async = require('async');
 var socketio = require('socket.io');
 var express = require('express');
 
+var mysql = require('mysql');
+
+var connection = mysql.createConnection({
+  host     : 'localhost', //接続先ホスト
+  user     : 'root',      //ユーザー名
+  password : '',  //パスワード
+  database : 'c9'    //DB名
+});
+//接続します
+connection.connect();
+    console.log('DB繋がったよ');
+
 //
 // ## SimpleServer `SimpleServer(obj)`
 //
